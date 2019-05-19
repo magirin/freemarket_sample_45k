@@ -9,9 +9,9 @@
 | Column | Type| Option |
 | :--- | :---: | :---: |
 | id | intger | null:false |
-| name | string | null:false |
-| kana_name | string | null:false |
-| nickname | string | null:false |
+| kanji_name | string | null:false,VARCHAR(70) |
+| kana_name | string | null:false,VARCHAR(70) |
+| nickname | string | null:false,VARCHAR(20) |
 | birth_of_date | integer | null:false |
 | password | integer | null:false |
 | prefecture | string | null:false |
@@ -20,13 +20,15 @@
 | mail | string |  unique:ture |
 | credit_number | integer | unique:true,null:false |
 | credit_security_number | integer | char(4) |
-| credit_expire_date | integer |null:false |
+| credit_expire_date | integer | null:false |
 | phone_number | integer | null:false |
 
 
 ### Association
 has_many :reputations
 has_many :comments
+has_many :products
+has_many :soldproducts
 
 ***
 ***
@@ -70,6 +72,24 @@ belongs_to :user
 - has_one :bland
 - has_many :categorys
 - has_many :images
+
+***
+***
+
+## SoldProduct Table
+| Column | Type| Option |
+| :--- | :---: | :---: |
+| id | intger | null:false |
+| product_id| integer | null:false |
+| user_id | integer | null:false |
+
+
+### Association
+belongs_to :user
+belongs_to :product
+
+***
+***
 
 ***
 ***
