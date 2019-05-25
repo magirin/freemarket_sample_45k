@@ -1,0 +1,60 @@
+.icon-header
+  = image_tag 'icon.png', size: "213x54"
+.content-wrapper
+  .content-wrapper__header 商品情報を入力
+  .upload-box
+    .upload-container
+      .upload-box__title 出品画像
+      %span.essential-icon 必須
+      .upload-box__description 最大10枚までアップロードできます
+      .upload-box__upload-box ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+  .content
+    .content__name 商品名
+    %span.essential-icon 必須
+    .content__form 商品名 (必須40文字まで)
+    .content__name 商品の説明
+    %span.essential-icon 必須
+    .content__textarea 商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+  .detail
+    .detail__title 商品の詳細
+    .size-ajust
+    .detail-container
+      .detail__subtitle カテゴリー
+      %span.essential-icon 必須
+      .detail__pull-down
+      .detail__subtitle 商品の状態
+      %span.essential-icon 必須
+      .detail__pull-down
+  .detail
+    .detail__title 配送について
+    .question-icon ?
+    .detail-container
+      .detail__subtitle 配送料の負担
+      %span.essential-icon 必須
+      .detail__pull-down
+      .detail__subtitle 発送元の地域
+      %span.essential-icon 必須
+      .detail__pull-down
+      .detail__subtitle 発送までの日数
+      %span.essential-icon 必須
+      .detail__pull-down
+  .detail
+    .detail__title 販売価格(300〜9,999,999)
+    .question-icon ?
+    .detail-container
+      .detail__subtitle 価格
+      %span.essential-icon 必須
+      .detail__price-input
+      .detail__commission 販売手数料 (10%)
+      .detail__profit 販売利益
+  .sell-box
+    .sell-box__description 禁止されている出品、行為を必ずご確認ください。<br>またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br>また、出品をもちまして加盟店規約に同意したことになります。
+    .sell-box__sell-button 出品する
+    .sell-box__back-button もどる
+  .content-wrapper__footer
+.sub-footer
+  .sub-footer__block プライバシーポリシー
+  .sub-footer__block メルカリ利用規約
+  .sub-footer__block 特定商取引に関する表記
+  .sub-footer__icon= image_tag 'mercari-icon.png', size: "105x74"
+  .sub-footer__copy-right © 2019 Mercari
