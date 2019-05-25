@@ -14,7 +14,7 @@
 | nickname | string | null:false,VARCHAR(20) |
 | birth_of_date | integer | null:false |
 | password | integer | null:false |
-| prefectrue | string | null:false |
+| prefecture | string | null:false |
 | address | string | null:false |
 | profile | string | null:false |
 | mail | string |  null:false, unique:true |
