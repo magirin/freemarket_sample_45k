@@ -189,6 +189,11 @@ body{
 
     &__description{
         font-size: 14px;
+
+        &--link{
+            font-size: 14px;
+            display: inline;
+        }
     }
 
     &__sell-button{
@@ -217,5 +222,13 @@ body{
     text-align: center;
     font-size: 12px;
     line-height: 25px;
-    display: inline-flex;
+
+    &__block{
+        display: inline-flex;
+        margin-left: 15px;
+    }
+
+    &__icon{
+        margin-top: 30px;
+    }
 }

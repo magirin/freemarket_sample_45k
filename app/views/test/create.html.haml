@@ -1,5 +1,4 @@
-.icon-header
-  = image_tag 'icon.png', size: "213x54"
+= render partial: "icon-header"
 .content-wrapper
   .content-wrapper__header 商品情報を入力
   .upload-box
@@ -52,13 +51,14 @@
         .detail__profit 販売利益
         .detail__profit--bar -
   .sell-box
-    .sell-box__description 禁止されている出品、行為を必ずご確認ください。<br>またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br>また、出品をもちまして加盟店規約に同意したことになります。
+    .sell-box__description--link
+      = link_to "禁止されている出品"
+    .sell-box__description--link 、
+    .sell-box__description--link
+      = link_to "行為"
+    .sell-box__description--link を必ずご確認ください。
+    .sell-box__description を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br>また、出品をもちまして加盟店規約に同意したことになります。
     .sell-box__sell-button 出品する
     .sell-box__back-button もどる
   .content-wrapper__footer
-.sub-footer
-  .sub-footer__block プライバシーポリシー
-  .sub-footer__block メルカリ利用規約
-  .sub-footer__block 特定商取引に関する表記
-  .sub-footer__icon= image_tag 'mercari-icon.png', size: "105x74"
-  .sub-footer__copy-right © 2019 Mercari
+= render partial: "sub-footer"
