@@ -65,7 +65,6 @@ belongs_to :user
 | user_id | integer | null:false |
 | bland_id | integer | null:true |
 | category_id | integer | null:false |
-| image_id| integer | null:false|
 
 ### Association
 - belongs_to :user
