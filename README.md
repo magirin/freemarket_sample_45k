@@ -37,7 +37,7 @@ has_many :soldproducts
 | Column | Type| Option |
 | :--- | :---: | :---: |
 | id | integer | null:false |
-| user_id | integer | null:false |
+| user_id | integer | null:false, foreign_key: true |
 | status | integer | null:false |
 
 ### Association
@@ -59,9 +59,9 @@ belongs_to :user
 | prodution_quality | string | null:false |
 | shipping | enum(way,price,area,date) | null:false |
 | product_status | string | null:false |
-| user_id | integer | null:false |
-| bland_id | integer | null:true |
-| category_id | integer | null:false |
+| user_id | integer | null:false, foreign_key: true|
+| bland_id | integer | null:true, foreign_key: true|
+| category_id | integer | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -79,7 +79,7 @@ belongs_to :user
 | :--- | :---: | :---: |
 | id | integer | null:false |
 | product_id| integer | null:false |
-| user_id | integer | null:false |
+| user_id | integer | null:false, foreign_key: true |
 
 
 ### Association
@@ -96,8 +96,8 @@ belongs_to :product
 | Column | Type| Option |
 | :--- | :---: | :---: |
 | id | integer | null:false |
-| user_id | integer | null:false|
-| product_id | integer | null:false |
+| user_id | integer | null:false, foreign_key: true|
+| product_id | integer | null:false, foreign_key: true |
 | image | string | null:false |
 
 
@@ -137,8 +137,8 @@ belongs_to :product
 | :---: | :---: | :---: |
 | id | integer | null:false |
 | comment | string | null:false |
-| user_id | integer | null:false |
-| product_id | integer | null:false |
+| user_id | integer | null:false, foreign_key: true |
+| product_id | integer | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user 
