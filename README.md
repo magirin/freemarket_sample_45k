@@ -102,7 +102,7 @@ belongs_to :product
 | id | integer | null:false |
 | user_id | integer | null:false|
 | product_id | integer | null:false |
-| image | integer | null:true |
+| image | string | null:false |
 
 
 ### Association
