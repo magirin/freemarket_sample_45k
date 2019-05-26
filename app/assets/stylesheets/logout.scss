@@ -1,0 +1,16 @@
+.logout{
+    height: 180px;
+    width: 680px;
+    background-color: white;
+    float: right;
+
+    &__button{
+        background-color: red;
+        height: 50px;
+        width: 320px;
+        text-align: center;
+        color: white;
+        line-height: 50px;
+        margin: 65px 180px;
+    }
+}
