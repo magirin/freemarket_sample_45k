@@ -4,7 +4,6 @@ class TestController < ApplicationController
   end
 
   def update
-    
   end
 
 end
