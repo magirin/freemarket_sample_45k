@@ -3,8 +3,7 @@ class TestController < ApplicationController
   def index
   end
 
-  def update
-    
+  def destroy
   end
 
 end
