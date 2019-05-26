@@ -57,10 +57,7 @@ belongs_to :user
 | description | string | null:false,VARCHAR(1000) |
 | favorite | integer | null:false |
 | prodution_quality | string | null:false |
-| shipping_way | string | null:false |
-| shipping_price| integer | null:false|
-| shipping_area | string | null:false |
-| date_of_shipping | integer | null:false  |
+| shipping | enum(way,price,area,date) | null:false |
 | product_status | string | null:false |
 | user_id | integer | null:false |
 | bland_id | integer | null:true |
