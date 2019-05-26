@@ -89,9 +89,6 @@ belongs_to :product
 ***
 ***
 
-***
-***
-
 ## product_images Table
 | Column | Type| Option |
 | :--- | :---: | :---: |
