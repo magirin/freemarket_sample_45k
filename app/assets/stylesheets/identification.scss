@@ -1,0 +1,44 @@
+.content-right{
+    height: 100%;
+    &__wrapper{
+        margin: 40px;
+    }
+
+    &__info{
+        font-size: 14px;
+        display: inline-block;
+
+        &--link{
+            font-size: 14px;
+            display: inline-block;
+            float: left;
+            margin-left: 350px;
+        }
+
+        &--arrow{
+            font-size: 14px;
+            display: inline-block;
+            float: right;
+            margin-right: 10px;
+        }
+    
+    }
+
+    &__detail{
+        font-size: 14px;
+        margin-top: 40px;
+
+        &--title{
+            font-weight: bold;
+        }
+
+        &--box{
+            height: 50px;
+            width: 600px;
+            border: solid 1px;
+            line-height: 50px;
+            color: gray;
+        }
+    }
+
+}
