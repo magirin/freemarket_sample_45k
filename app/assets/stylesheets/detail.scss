@@ -1,0 +1,46 @@
+body{
+    background-color: gray;
+}
+
+.product-container{
+    background-color: white;
+    margin: 40px auto 0;
+    padding: 24px 40px 40px;
+    width: 700px;
+    height: 100%;
+}
+
+.product{
+
+    &__title{
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__picture{
+        height: 375px;
+        width: 300px;
+        display: inline-block;
+        margin-top: 16px;
+        background-color: gray;
+
+        &--main{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+
+        &--sub-container{
+            height: 60px;
+            width: 300px;
+        }
+
+        &--sub{
+            height: 60px;
+            width: 60px;
+            background-color: blue;
+            display: table-cell;
+        }
+    }
+}
