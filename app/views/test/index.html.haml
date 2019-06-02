@@ -8,6 +8,8 @@
         .product__picture--sub
         .product__picture--sub
         .product__picture--sub
+        .product__picture--sub
+        .product__picture--sub
     .product__detail
       .product__detail--pack
         .product__detail--left 出品者
@@ -25,17 +27,14 @@
         .product__detail--left 送料の負担
         .product__detail--right 送料込み（出品者負担）
       .product__detail--pack
-        .product__detail--left 配送料の負担
+        .product__detail--left 配送の方法
         .product__detail--right らくらくメルカリ便
       .product__detail--pack
-        .product__detail--left 配送の方法
+        .product__detail--left 発送元地域
         .product__detail--right 兵庫県
       .product__detail--pack
-        .product__detail--left 発送元地域
-        .product__detail--right 1~2日で発送
-      .product__detail--pack
         .product__detail--left 発送日の目安
-        .product__detail--right 
+        .product__detail--right 1~2日で発送
   .product__price-box
     .product__price ¥3,380-
     %span.product__price--tax (税込)
@@ -73,30 +72,36 @@
     .comment__time
   .comment__note 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
   .comment__box
-  .comment__sent-button
-  .other-product-link
-  .other-product-link
-  .sns-icon__container
-    .sns-icon__image
-    .sns-icon__image
-    .sns-icon__image
-  .product__title 〇〇さんのその他の出品
-  .other-product_container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .product__title 〇〇その他の商品
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-  .other-product__container
-          
+  .comment__sent-button コメントする
+.product-link
+  .product-link__right
+    .product-link__name マフラー
+    %span.product-link__right-arrow >
+  .product-link__left
+    %span.product-link__left-arrow <
+    .product-link__name 靴下
+.sns-icon
+  .sns-icon__wrapper
+    = image_tag "facebook-icon.png", size: "44x44", class: "sns-icon__image"
+    = image_tag "twitter-icon.png", size: "44x44", class: "sns-icon__image"
+    = image_tag "pintarest-icon.png", size: "44x44", class: "sns-icon__image"
+.product__title 〇〇さんのその他の出品
+.other-product_container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.product__title 〇〇その他の商品
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+.other-product__container
+        
 
 
 

@@ -1,5 +1,5 @@
 body{
-    background-color: gray;
+    background-color: #fafafa;
 }
 
 .product-container{
@@ -80,10 +80,10 @@ body{
         font-size: 24px;
         font-weight: bold;
         text-align: center;
+        margin-top: 50px;
     }
 
     &__picture{
-        height: 375px;
         width: 300px;
         display: inline-block;
         margin-top: 16px;
@@ -96,15 +96,19 @@ body{
         }
 
         &--sub-container{
-            height: 60px;
+            height: 120px;
             width: 300px;
+            font-size:0;
         }
 
         &--sub{
             height: 60px;
             width: 60px;
             background-color: blue;
-            display: table-cell;
+            display: inline-block;
+            border: solid 1px;
+            box-sizing: border-box;
+            
         }
 
         
@@ -133,7 +137,6 @@ body{
     &__detail{
         height: 420px;
         width: 300px;
-        background-color: red;
         float: right;
         margin-top: 16px;
 
@@ -153,7 +156,7 @@ body{
             display: table-cell;
             text-align: center;
             line-height: 49px;
-            border: solid 0.5px;
+            border: 1px solid #f5f5f5;
         }
 
         &--right{
@@ -162,7 +165,8 @@ body{
             width: 56%;
             height: 49px;
             display: table-cell;
-            border: solid 1px;box-sizing: border-box;
+            border: 1px solid #f5f5f5;
+            box-sizing: border-box;
             text-align: center;
             line-height: 49px;
         }
@@ -184,5 +188,92 @@ body{
         font-size: 14px;
         margin-top: 24px;
     }
-
 }
+
+.comment{
+
+    &__wrapper{
+    background-color: white;
+    height: 100%;
+    width: 700px;
+    margin: 15px auto 0;
+    padding: 24px;
+    box-sizing: border-box;
+
+    }
+
+    &__container{
+        height: 100%;
+    }
+
+    &__note{
+        background-color: #fff6de;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    &__box{
+        height: 100px;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid;
+    }
+
+    &__sent-button{
+        color: white;
+        background-color: #aaaaaa;
+        margin-top: 8px;
+        height: 50px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 50px;
+    }
+}
+
+.product-link{
+    margin: 24px auto;
+    width: 700px;
+
+    &__right{
+        float: right;
+        display: flex;
+    }
+
+    &__left{
+        float: left;
+        display: flex;
+    }
+
+    &__right-arrow{
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    &__left-arrow{
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    &__name{
+        font-size: 14px;
+    }
+}
+
+.sns-icon{
+    margin: 65px auto;
+    background-color: white;
+    width: 700px;
+    height: 140px;
+
+    &__wrapper{
+        padding: 45px 275px 0;
+        box-sizing: border-box;
+        
+    }
+
+    &__image{
+        display: inline-block;
+        border-radius: 10px;
+    }
+}
+
