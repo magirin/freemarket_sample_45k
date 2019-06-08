@@ -1,12 +1,13 @@
 .content-right{
-    height: 100%;
+
     &__wrapper{
         margin: 40px;
     }
 
-    &__info{
+    &__info-top{
         font-size: 14px;
         display: inline-block;
+        margin-top:8px;
 
         &--link{
             font-size: 14px;
@@ -19,7 +20,28 @@
             font-size: 14px;
             display: inline-block;
             float: right;
-            margin-right: 10px;
+            margin-right: 20px;
+        }
+    
+    }
+
+    &__info{
+        font-size: 14px;
+        display: inline-block;
+        margin-top:8px;
+
+        &--link{
+            font-size: 14px;
+            display: inline-block;
+            float: left;
+            margin-left: 445px;
+        }
+
+        &--arrow{
+            font-size: 14px;
+            display: inline-block;
+            float: right;
+            margin-right: 90px;
         }
     
     }
@@ -30,15 +52,38 @@
 
         &--title{
             font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         &--box{
             height: 50px;
-            width: 600px;
+            width: 572px;
             border: solid 1px;
             line-height: 50px;
             color: gray;
+            margin-top: 8px;
+            box-sizing: border-box;
+            padding-left: 15px;
+        }
+
+        &--optional{
+            margin-left: 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            display: inline-block;
+            background-color: #ccc;
+            box-sizing: border-box;
         }
     }
 
+}
+
+.pull-down{
+    position: absolute;
+    right: 100px;
+    top: 605px;
 }
