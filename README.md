@@ -52,7 +52,7 @@ belongs_to :user
 | :--- | :---: | :---: |
 | id | integer | null:false |
 | name | string | null:false,VARCHAR(40),index:true |
-| price | integer | null:false, CHAR(9999999) |
+| price | string | null:false, VARCHAR(9999999) |
 | size | string | null:false |
 | description | string | null:false,VARCHAR(1000) |
 | favorite | integer | null:false |
