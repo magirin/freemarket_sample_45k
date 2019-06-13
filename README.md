@@ -100,6 +100,7 @@ belongs_to :product
 
 ### Association
 - belongs_to :product
+<!-- ここにbelongs_to :user? -->
 
 ***
 ***
@@ -133,7 +134,7 @@ belongs_to :product
 | Column | Type| Option |
 | :---: | :---: | :---: |
 | id | integer | null:false |
-| comment | string | null:false |
+| comment | string | null:false,VARCHAR(1000) |
 | user_id | integer | null:false, foreign_key: true |
 | product_id | integer | null:false, foreign_key: true |
 
