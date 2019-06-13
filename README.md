@@ -57,7 +57,10 @@ belongs_to :user
 | description | string | null:false,VARCHAR(1000) |
 | favorite | integer | null:false |
 | prodution_quality | string | null:false |
-| shipping | enum(way,price,area,date) | null:false |
+| shipping_price | enum(buyer,exhibitor) | null:false |
+| shipping_way | enum(undicided,kuroneko,yupack,yumail) | null:true |
+| shipping_place | string | null:false |
+| shipping_date | enum(1-2days,2-3days,4-7days) | null:false |
 | product_status | string | null:false |
 | user_id | integer | null:false, foreign_key: true|
 | bland_id | integer | null:true, foreign_key: true|
@@ -100,7 +103,7 @@ belongs_to :product
 
 ### Association
 - belongs_to :product
-<!-- ここにbelongs_to :user? -->
+- belongs_to :user
 
 ***
 ***
