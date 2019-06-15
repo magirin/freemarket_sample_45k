@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190613002122) do
+ActiveRecord::Schema.define(version: 20190615082022) do
 
   create_table "blands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "parent_id"
@@ -89,20 +89,27 @@ ActiveRecord::Schema.define(version: 20190613002122) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "kanji_name",             limit: 70, null: false
-    t.string  "kana_name",              limit: 70, null: false
-    t.string  "nickname",               limit: 20, null: false
-    t.integer "birth_of_date",                     null: false
-    t.integer "password",                          null: false
-    t.string  "prefecture",                        null: false
-    t.string  "address",                           null: false
-    t.string  "profile",                           null: false
-    t.string  "mail",                              null: false
-    t.integer "credit_number",                     null: false
-    t.integer "credit_security_number",            null: false
-    t.integer "credit_expire_date",                null: false
-    t.string  "phone_number",                      null: false
-    t.string  "timestamps"
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: "", null: false
+    t.string   "kanji_name",             limit: 70,              null: false
+    t.string   "kana_name",              limit: 70,              null: false
+    t.string   "nickname",               limit: 20,              null: false
+    t.integer  "birth_of_date",                                  null: false
+    t.string   "prefecture",                                     null: false
+    t.string   "address",                                        null: false
+    t.string   "profile",                                        null: false
+    t.integer  "credit_number",                                  null: false
+    t.integer  "credit_security_number",                         null: false
+    t.integer  "credit_expire_date",                             null: false
+    t.string   "phone_number",                                   null: false
+    t.string   "timestamps"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
