@@ -18,20 +18,30 @@
 | address | string | null:false |
 | profile | string | null:false |
 | mail | string |  null:false, unique:true |
-| credit_number | integer | unique:true,null:false |
-| credit_security_number | integer | char(4), null:false |
-| credit_expire_date | integer | null:false |
 | phone_number | string | unique:true,VARCHAR(255), null: true |
 
 
 ### Association
-has_many :reputations
-has_many :comments
-has_many :products
-has_many :soldproducts
+- has_many :reputations
+- has_many :comments
+- has_many :products
+- has_many :soldproducts
+- has_many :credit_cards
 
 ***
 ***
+
+## Credit_cards Table
+| Column | Type| Option |
+| credit_number | integer | unique:true,null:false |
+| credit_security_number | integer | char(4), null:false |
+| credit_expire_date | integer | null:false |
+| user_id | integer | null:false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
 
 ## reputations Table
 | Column | Type| Option |
