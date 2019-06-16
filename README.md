@@ -21,7 +21,7 @@
 | credit_number | integer | unique:true,null:false |
 | credit_security_number | integer | char(4), null:false |
 | credit_expire_date | integer | null:false |
-| phone_number | string | unique:true,VARCHAR(255), null:false |
+| phone_number | string | unique:true,VARCHAR(255), null: true |
 
 
 ### Association

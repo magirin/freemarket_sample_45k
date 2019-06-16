@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.integer :credit_number, unique: true,null: false 
       t.integer :credit_security_number,  limit: 4, null: false 
       t.integer :credit_expire_date, null: false 
-      t.string :phone_number, unique: true, limit: 255, null: false
+      t.string :phone_number, unique: true, limit: 255, null: true
       t.string :timestamps
 
       ## Recoverable
