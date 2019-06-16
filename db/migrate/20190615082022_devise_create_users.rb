@@ -11,11 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :nickname, null: false, limit: 20 
       t.integer :birth_of_date, null: false 
       t.string :prefecture, null: false 
-      t.string :address, null: false 
-      t.string :profile, null: false 
-      t.integer :credit_number, unique: true,null: false 
-      t.integer :credit_security_number,  limit: 4, null: false 
-      t.integer :credit_expire_date, null: false 
+      t.string :address, null: true
+      t.string :profile, null: true
       t.string :phone_number, unique: true, limit: 255, null: true
       t.string :timestamps
 
@@ -52,13 +49,5 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
-  end
-end
-
-class CreateUsers < ActiveRecord::Migration[5.0]
-  def change
-    create_table :users do |t|
-
-    end
   end
 end
