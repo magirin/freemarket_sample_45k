@@ -15,9 +15,9 @@
 | birth_of_date | integer | null:false |
 | password | integer | null:false |
 | prefecture | string | null:false |
-| address | string | null:false |
-| profile | string | null:false |
-| mail | string |  null:false, unique:true |
+| address | string | null:true |
+| profile | string | null:true |
+| email | string |  null:false, unique:true |
 | phone_number | string | unique:true,VARCHAR(255), null: true |
 
 
