@@ -101,11 +101,10 @@ ActiveRecord::Schema.define(version: 20190616060907) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
-    t.string   "kanji_name",             limit: 70,              null: false
-    t.string   "kana_name",              limit: 70,              null: false
-    t.string   "nickname",               limit: 20,              null: false
-    t.integer  "birth_of_date",                                  null: false
-    t.string   "prefecture",                                     null: false
+    t.string   "kanji_name",             limit: 70, default: "", null: false
+    t.string   "kana_name",              limit: 70, default: "", null: false
+    t.string   "nickname",               limit: 20
+    t.string   "prefecture",                        default: ""
     t.string   "address"
     t.string   "profile"
     t.string   "phone_number"

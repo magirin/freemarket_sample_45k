@@ -27,4 +27,10 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:kanji_name, :kana_name, :birth_of_date, :nickname)
+  end
 end

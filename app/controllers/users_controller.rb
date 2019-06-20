@@ -22,4 +22,13 @@ class UsersController < ApplicationController
     def destroy
     end
 
+
+
+private
+
+  def user_params
+    params.require(:user).permit(:kanji_name)
+  end
+
 end
+

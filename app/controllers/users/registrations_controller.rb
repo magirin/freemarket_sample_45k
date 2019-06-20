@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -10,9 +10,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    kanji_last_name = params[:kanji_name][0][:last]
+    kanji_first_name = params[:kanji_name][0][:first]
+    kanji_name = "#{kanji_last_name} #{kanji_first_name}"
+    kana_last_name = params[:kana_name][0][:last]
+    kana_first_name = params[:kana_name][0][:first]
+    kana_name = "#{kana_last_name} #{kana_first_name}"
+    @user.kanji_name << kanji_name
+    @user.kana_name << kana_name
+    if @user.save
+      redirect_to  new_user_registration_path
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -38,7 +49,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  def post_params
+    params.require(:user).permit(:kanji_name, :kana_name, :nickname, :birth_of_date, :prefecture, :address, :profile, :phone_number)
+  end
+
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
