@@ -11,17 +11,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
     kanji_last_name = params[:kanji_name][0][:last]
     kanji_first_name = params[:kanji_name][0][:first]
-    kanji_name = "#{kanji_last_name} #{kanji_first_name}"
+    kanji_name = "#{kanji_last_name}#{kanji_first_name}"
+    params[:user][:kanji_name] = kanji_name
     kana_last_name = params[:kana_name][0][:last]
     kana_first_name = params[:kana_name][0][:first]
-    kana_name = "#{kana_last_name} #{kana_first_name}"
-    @user.kanji_name << kanji_name
-    @user.kana_name << kana_name
+    kana_name = "#{kana_last_name}#{kana_first_name}"
+    params[:user][:kana_name] = kana_name
+    super
+    # User.create(nickname: params[:nickname], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation], kanji_name: params[:kanjiname], kana_name: params[:kana_name])
+    binding.pry
     if @user.save
-      redirect_to  new_user_registration_path
+      redirect_to new_user_registration_path
     end
   end
 
