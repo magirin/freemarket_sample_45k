@@ -12,15 +12,15 @@ class User < ApplicationRecord
 
 
   # VALID_KANJI = /\A[一-龥]+\z/
-  # validates :kanji_name, format: { 
-  #   with: VALID_KANJI 
-  #   message: "漢字のみで入力して下さい" 
-  # }
+  validates :kanji_name, presence: true
 
   VALID_KANA = /\A[\p{katakana}]+\z/
-  validates :kana_name, format: { 
+  validates :kana_name, presence: true, format: { 
     with: VALID_KANA,
     message: "全角カタカナのみで入力して下さい" 
   }
+
+  validates :nickname, presence: true
+  validates :password_confirmation, presence: true
 
 end

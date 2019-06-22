@@ -21,9 +21,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params[:user][:kana_name] = kana_name
     super
     # User.create(nickname: params[:nickname], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation], kanji_name: params[:kanjiname], kana_name: params[:kana_name])
-    binding.pry
     if @user.save
-      redirect_to new_user_registration_path
+      redirect_to new_user_session_path
     end
   end
 
