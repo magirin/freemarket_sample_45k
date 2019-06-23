@@ -22,7 +22,13 @@
     .detail-container
       .detail__subtitle カテゴリー
       %span.essential-icon 必須
-      .detail__pull-down
+      .detail__pull-down その１
+      .detail__pull-down その２
+      .detail__pull-down その３
+      .detail__subtitle ブランド
+      %span.essential-icon 任意
+      = form_for @product do |f|
+        = f.text_field :bland, class: "detail__pull-down", placeholder: "例) シャネル"
       .detail__subtitle 商品の状態
       %span.essential-icon 必須
       .detail__pull-down
@@ -46,7 +52,8 @@
       .detail-container__sub
         .detail__subtitle 価格
         %span.essential-icon 必須
-        .detail__price-input 例）300  
+        = form_for @product do |f|
+          = f.text_field :price, class: "detail__price-input", placeholder: "例) 300"
       .detail-container__sub
         .detail__commission 販売手数料 (10%)
       .detail-container
