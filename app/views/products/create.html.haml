@@ -35,13 +35,14 @@
       .detail__subtitle 商品の状態
       %span.essential-icon 必須
       = form_for @product do |f|
-        = f.select :prodution_quality, class: "detail__pull-down"
+        = f.select :product_quality, { 新品、未使用: 1, 目立った傷や汚れなし: 2, やや傷や汚れあり: 3, 傷や汚れあり: 4, 全体的に状態が悪い: 5 }, {} ,{ class: "detail__pull-down" }
   .detail
     .detail__title 配送について
     .question-icon ?
     .detail-container
       .detail__subtitle 配送料の負担
       %span.essential-icon 必須
+      %i.fas.fa-chevron-down.arrow-down
       = form_for @product do |f|
         = f.select :shipping_way, class: "detail__pull-down"
       .detail__subtitle 発送元の地域
@@ -59,6 +60,7 @@
       .detail-container__sub
         .detail__subtitle 価格
         %span.essential-icon 必須
+        %span.yen ¥
         = form_for @product do |f|
           = f.text_field :price, class: "detail__price-input", placeholder: "例) 300"
       .detail-container__sub

@@ -59,22 +59,22 @@ ActiveRecord::Schema.define(version: 20190616060907) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",              limit: 40,   null: false
-    t.bigint   "price",                          null: false
-    t.string   "size",                           null: false
-    t.string   "description",       limit: 1000, null: false
-    t.integer  "favorite",                       null: false
-    t.string   "prodution_quality",              null: false
-    t.integer  "shipping_price",                 null: false
-    t.integer  "shipping_way",                   null: false
-    t.integer  "shipping_place",                 null: false
-    t.integer  "shipping_date",                  null: false
-    t.string   "product_status",                 null: false
-    t.integer  "user_id",                        null: false
+    t.string   "name",            limit: 40,   null: false
+    t.bigint   "price",                        null: false
+    t.string   "size",                         null: false
+    t.string   "description",     limit: 1000, null: false
+    t.integer  "favorite",                     null: false
+    t.string   "product_quality",              null: false
+    t.integer  "shipping_price",               null: false
+    t.integer  "shipping_way",                 null: false
+    t.integer  "shipping_place",               null: false
+    t.integer  "shipping_date",                null: false
+    t.integer  "product_status",               null: false
+    t.integer  "user_id",                      null: false
     t.integer  "bland_id"
-    t.integer  "category_id",                    null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "category_id",                  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["bland_id"], name: "index_products_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["name"], name: "index_products_on_name", using: :btree
@@ -101,13 +101,17 @@ ActiveRecord::Schema.define(version: 20190616060907) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
-    t.string   "kanji_name",             limit: 70, default: "", null: false
-    t.string   "kana_name",              limit: 70, default: "", null: false
-    t.string   "nickname",               limit: 20
-    t.string   "prefecture",                        default: ""
-    t.string   "address"
-    t.string   "profile"
-    t.string   "phone_number"
+    t.string   "kanji_name",             limit: 70,              null: false
+    t.string   "kana_name",              limit: 70,              null: false
+    t.string   "nickname",               limit: 20,              null: false
+    t.integer  "birth_of_date",                                  null: false
+    t.string   "prefecture",                                     null: false
+    t.string   "address",                                        null: false
+    t.string   "profile",                                        null: false
+    t.integer  "credit_number",                                  null: false
+    t.integer  "credit_security_number",                         null: false
+    t.integer  "credit_expire_date",                             null: false
+    t.string   "phone_number",                                   null: false
     t.string   "timestamps"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
