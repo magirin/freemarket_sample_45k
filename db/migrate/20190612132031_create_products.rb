@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.integer :shipping_way, null: false 
       t.integer :shipping_place, null: false 
       t.integer :shipping_date, null: false 
-      t.string :product_status, null: false 
+      t.integer :product_status, null: false 
       t.references :user, null: false
       t.references :bland, null: true
       t.references :category, null: false

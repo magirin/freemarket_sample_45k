@@ -22,29 +22,36 @@
     .detail-container
       .detail__subtitle カテゴリー
       %span.essential-icon 必須
-      .detail__pull-down その１
-      .detail__pull-down その２
-      .detail__pull-down その３
+      = form_for @category do |f|
+        = f.select :parent_id, { ーーー: nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+      = form_for @category do |f|
+        = f.select :parent_id, { ーーー: nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+      = form_for @category do |f|
+        = f.select :parent_id, { ーーー: nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
       .detail__subtitle ブランド
       %span.essential-icon 任意
       = form_for @product do |f|
         = f.text_field :bland, class: "detail__pull-down", placeholder: "例) シャネル"
       .detail__subtitle 商品の状態
       %span.essential-icon 必須
-      .detail__pull-down
+      = form_for @product do |f|
+        = f.select :prodution_quality, class: "detail__pull-down"
   .detail
     .detail__title 配送について
     .question-icon ?
     .detail-container
       .detail__subtitle 配送料の負担
       %span.essential-icon 必須
-      .detail__pull-down
+      = form_for @product do |f|
+        = f.select :shipping_way, class: "detail__pull-down"
       .detail__subtitle 発送元の地域
       %span.essential-icon 必須
-      .detail__pull-down
+      = form_for @product do |f|
+        = f.select :shipping_place, class: "detail__pull-down"
       .detail__subtitle 発送までの日数
       %span.essential-icon 必須
-      .detail__pull-down
+      = form_for @product do |f|
+        = f.select :shipping_date, class: "detail__pull-down"
   .detail
     .detail__title 販売価格(300〜9,999,999)
     .question-icon ?
