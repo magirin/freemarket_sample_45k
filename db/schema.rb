@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190616060907) do
+ActiveRecord::Schema.define(version: 20190629111708) do
 
   create_table "blands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "parent_id"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20190616060907) do
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "parent_id"
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +45,14 @@ ActiveRecord::Schema.define(version: 20190616060907) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",            null: false
+    t.integer  "sub_category_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["sub_category_id"], name: "index_items_on_sub_category_id", using: :btree
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -73,11 +80,15 @@ ActiveRecord::Schema.define(version: 20190616060907) do
     t.integer  "user_id",                      null: false
     t.integer  "bland_id"
     t.integer  "category_id",                  null: false
+    t.integer  "sub_category_id",              null: false
+    t.integer  "item_id",                      null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["bland_id"], name: "index_products_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
+    t.index ["item_id"], name: "index_products_on_item_id", using: :btree
     t.index ["name"], name: "index_products_on_name", using: :btree
+    t.index ["sub_category_id"], name: "index_products_on_sub_category_id", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
@@ -96,6 +107,14 @@ ActiveRecord::Schema.define(version: 20190616060907) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_sold_products_on_product_id", using: :btree
     t.index ["user_id"], name: "index_sold_products_on_user_id", using: :btree
+  end
+
+  create_table "sub_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",        null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

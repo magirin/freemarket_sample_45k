@@ -23,13 +23,11 @@
       .detail__subtitle カテゴリー
       %span.essential-icon 必須
       = form_for @product do |f|
-        = f.select :category_id, { "---": nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+        = f.collection_select :category_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-      = form_for @product do |f|
-        = f.select :sub_category_id, { "---": nil, サブカテゴリ1: 1, サブカテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+        = f.collection_select :sub_category_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-      = form_for @product do |f|
-        = f.select :item_id, { "---": nil, アイテム1: 1, アイテム2: 2 }, {}, { class: "detail__pull-down" }
+        = f.collection_select :item_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
       .detail__subtitle ブランド
       %span.optional-icon 任意
@@ -92,7 +90,8 @@
       = link_to "行為"
     .sell-box__description--link を必ずご確認ください。
     .sell-box__description を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。<br>また、出品をもちまして加盟店規約に同意したことになります。
-    .sell-box__sell-button 出品する
+    = form_for @product do |f|
+      =f.submit "出品する", class: "sell-box__sell-button"
     .sell-box__back-button もどる
   .content-wrapper__footer
 = render partial: "sub-footer"

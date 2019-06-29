@@ -15,6 +15,8 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.references :user, null: false
       t.references :bland, null: true
       t.references :category, null: false
+      t.references :sub_category, null: false
+      t.references :item, null: false
       t.timestamps
     end
   end
