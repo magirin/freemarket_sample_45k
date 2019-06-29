@@ -2,6 +2,18 @@ body{
     background-color:rgb(245, 245, 245);;
 }
 
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding-left: 10px;
+}
+
+.arrow-down{
+    position: relative;
+    left: 370px;
+    top: -35px;
+}
 
 .icon-header{
     width: 100vh;
