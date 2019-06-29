@@ -53,9 +53,9 @@ belongs_to :user
 | id | integer | null:false |
 | name | string | null:false,VARCHAR(40),index:true |
 | price | string | null:false, VARCHAR(9999999) |
-| size | string | null:false |
+| size | integer | null:false |
 | description | string | null:false,VARCHAR(1000) |
-| favorite | integer | null:false |
+| favorite | integer | null:true |
 | prodution_quality | string | null:false |
 | shipping_price | enum(buyer,exhibitor) | null:false |
 | shipping_way | enum(undicided,kuroneko,yupack,yumail) | null:true |

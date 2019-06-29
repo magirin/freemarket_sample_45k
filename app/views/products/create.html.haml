@@ -35,6 +35,11 @@
       %span.essential-icon 任意
       = form_for @product do |f|
         = f.text_field :bland, class: "detail__pull-down", placeholder: "例) シャネル"
+      .detail__subtitle サイズ
+      %span.essential-icon 必須
+      = form_for @product do |f|
+        = f.select :size, { "---": nil, "XXS以下": 1, "XS(SS)": 2, "S": 3, "M": 4, "L": 5, "L": 6, "XL": 7, "2XL": 8, "3XL": 9, "4XL(5L)": 10, "FREE SIZE": 11} , {} , { class: "detail__pull-down"}
+        %i.fas.fa-chevron-down.arrow-down
       .detail__subtitle 商品の状態
       %span.essential-icon 必須
       = form_for @product do |f|

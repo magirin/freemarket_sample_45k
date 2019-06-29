@@ -36,7 +36,7 @@ select {
         text-align: center;
         line-height: 25px;
         border-bottom: solid 1px;
-        border-color: gray;
+        border-color: #eee;
     }
 }
 
@@ -60,7 +60,7 @@ select {
     right: 20px;
 
     &__sub{
-        border-bottom: solid 1px;
+        border-bottom: solid 1px #eee;
         height: 72px;
     }
 }
@@ -78,7 +78,7 @@ select {
 .upload-box{
     padding: 40px;
     border-bottom: solid 1px;
-    border-color: gray;
+    border-color: #eee;
 
     &__title{
         float: left;
@@ -106,7 +106,7 @@ select {
 .content{
     padding: 40px;
     border-bottom: solid 1px;
-    border-color: gray;
+    border-color: #eee;
 
     &__name{
         display: block;
@@ -144,7 +144,8 @@ select {
     width: 14px;
     border-radius: 50%;
     background-color: #0099e8;
-    font-size: 12px;
+    color: white;
+    font-size: 5px;
     text-align: center;
     line-height: 14px;
     display: inline-block;
@@ -153,7 +154,7 @@ select {
 .detail{
     padding: 40px;
     border-bottom: solid 1px;
-    border-color: gray;
+    border-color: #eee;
     display: inline-block;
     width: 620px;
 
@@ -169,8 +170,10 @@ select {
     &__pull-down{
         height: 48px;
         width: 400px;
-        border: solid 1px;
+        border: solid 1px #ccc;
         margin-top: 4px;
+        background-color: white;
+        border-radius: 5px;
     }
 
     &__price-input{
@@ -189,6 +192,7 @@ select {
 
     &__commission{
         line-height: 73px;
+        border-bottom: #eee;
     }
 
     &__profit{
