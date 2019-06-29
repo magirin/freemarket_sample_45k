@@ -8,6 +8,7 @@
         %span.essential-icon 必須
         .upload-box__description 最大10枚までアップロードできます
         .upload-box__upload-box ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+        = f.file_field :image, class: 'upload-box__upload-box'
     .content
       .content__name 商品名
       %span.essential-icon 必須
@@ -21,11 +22,11 @@
       .detail-container
         .detail__subtitle カテゴリー
         %span.essential-icon 必須
-        = f.collection_select :category_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
+        = f.collection_select :category_id, Category.all, :id, :name, { include_blank: true, selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-        = f.collection_select :sub_category_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
+        = f.collection_select :sub_category_id, SubCategory.all, :id, :name, { include_blank: true ,selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-        = f.collection_select :item_id, Category.all, :id, :name, {default: "---"}, { class: "detail__pull-down" }
+        = f.collection_select :item_id, Item.all, :id, :name, { include_blank: true , selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
         .detail__subtitle ブランド
         %span.optional-icon 任意
@@ -83,4 +84,4 @@
       =f.submit "出品する", class: "sell-box__sell-button"
       .sell-box__back-button もどる
     .content-wrapper__footer
-  = render partial: "sub-footer"
+= render partial: "sub-footer"
