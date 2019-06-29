@@ -125,11 +125,33 @@ belongs_to :product
 | Column | Type| Option |
 | :--- | :---: | :---: |
 | id | integer | null:false |
-| parent_id | integer | null:true |
 | name | string | null:false ,index:true|
 
 ### Association
 - belongs_to :product
+
+***
+***
+
+## sub_category Table
+| Column | Type| Option |
+| :--- | :---: | :---: |
+| id | integer | null:false |
+| name | string | null:false |
+| category_id | integer | null:false, foreign_key: true |
+
+
+
+***
+***
+
+## item Table
+| Column | Type| Option |
+| :--- | :---: | :---: |
+| id | integer | null:false |
+| name | string | null:false |
+| sub_category_id | integer | null:false, foreign_key: true |
+
 
 ***
 ***

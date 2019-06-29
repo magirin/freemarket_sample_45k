@@ -22,17 +22,17 @@
     .detail-container
       .detail__subtitle カテゴリー
       %span.essential-icon 必須
-      = form_for @category do |f|
-        = f.select :parent_id, { "---": nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+      = form_for @product do |f|
+        = f.select :category_id, { "---": nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-      = form_for @category do |f|
-        = f.select :parent_id, { "---": nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+      = form_for @product do |f|
+        = f.select :sub_category_id, { "---": nil, サブカテゴリ1: 1, サブカテゴリ2: 2 }, {}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-      = form_for @category do |f|
-        = f.select :parent_id, { "---": nil, カテゴリ1: 1, カテゴリ2: 2 }, {}, { class: "detail__pull-down" }
+      = form_for @product do |f|
+        = f.select :item_id, { "---": nil, アイテム1: 1, アイテム2: 2 }, {}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
       .detail__subtitle ブランド
-      %span.essential-icon 任意
+      %span.optional-icon 任意
       = form_for @product do |f|
         = f.text_field :bland, class: "detail__pull-down", placeholder: "例) シャネル"
       .detail__subtitle サイズ
