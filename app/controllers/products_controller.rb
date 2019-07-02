@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
     def create 
-        @category = Category.new
+        @category = 0
         @product = Product.new
     end
 

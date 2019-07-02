@@ -24,9 +24,11 @@
         %span.essential-icon 必須
         = f.collection_select :category_id, Category.all, :id, :name, { include_blank: true, selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-        = f.collection_select :sub_category_id, SubCategory.all, :id, :name, { include_blank: true ,selected: '---'}, { class: "detail__pull-down" }
+        - category_id = 1
+        = f.collection_select :sub_category_id, SubCategory.where(category_id: category_id), :id, :name, { include_blank: true ,selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
-        = f.collection_select :item_id, Item.all, :id, :name, { include_blank: true , selected: '---'}, { class: "detail__pull-down" }
+        - sub_category_id = 1
+        = f.collection_select :item_id, Item.where(sub_category_id: sub_category_id), :id, :name, { include_blank: true , selected: '---'}, { class: "detail__pull-down" }
         %i.fas.fa-chevron-down.arrow-down
         .detail__subtitle ブランド
         %span.optional-icon 任意
