@@ -7,6 +7,7 @@ class Product < ApplicationRecord
 
     belongs_to :user
     has_one :bland
+    has_one :region
     has_many :categorys
     has_many :images
     has_many :productimages
