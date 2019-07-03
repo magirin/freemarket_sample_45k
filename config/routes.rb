@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'test#index'
+  root 'products#create' 
+  resources :products, only: [:index, :create, :edit, :update, :destroy]
+  resources :categories
 end
